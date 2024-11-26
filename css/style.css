@@ -356,8 +356,30 @@ button:disabled{
   'GRAD' 0,
   'opsz' 24;
 }
-
-
+:has(> .state-layer){
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.ripple,
+.state-layer{
+  background-color: var(--state-layer-bg);
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+.state-layer{
+  border-radius: inherit;
+  inset: 0;
+  opacity: 0;
+  transition: var(--motion-duration-short-2) var(--motion-easing-linear);
+}
+:has(> .state-layer):hover > .state-layer{
+  opacity: 0.08;  
+}
+:has(> .state-layer):is(:focus, :focus-visible, :active) > .state-layer{
+  opacity: 0.12;
+}
 
 
 /*-----------------------------------*\
@@ -367,8 +389,28 @@ button:disabled{
 /**
  * Icon button
  */
-
-
+.icon-btn{
+  color: var(--on-surface-variant);
+  --state-layer-bg: var(--on-surface-variant);
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-circle);
+}
+.icon-btn > .state-layer{
+  inset: 4px;
+}
+.icon-btn > .ripple{
+  width: 40px;
+  height: 40px;
+  animation: icon-button-ripple 200ms var(--motion-easing-standard) forwards;
+}
+@keyframes icon-button-ripple{
+  0%{scale: 0;}
+  100%{scale: 1;}
+}
 
 
 
