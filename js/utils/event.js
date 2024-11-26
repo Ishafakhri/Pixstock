@@ -1,6 +1,12 @@
+"use strict";
+
 /**
- * @copyright codewithsadee 2023
- * @author sadee <codewithsadee@gmail.com>
+ * 
+ * @param {NodeList} $elements 
+ * @param {String} eventType 
+ * @param {Function} callback 
  */
 
-"use strict";
+export const AddEventOnElements = function($elements, eventType, callback){
+    $elements.forEach($element => $element.addEventListener(eventType, callback));
+}
