@@ -7,7 +7,7 @@
 :root{
   --scrim: #000000;
 
-  --light-background: #FAFDFC;
+--light-background: #FAFDFC;
 --light-on-background: #191C1C;
 --light-surface: #F7FAF9;
 --light-on-surface: #191C1C;
@@ -90,8 +90,107 @@
 
 --weight-regular: 400;
 --weight-medium: 500;
+
+--radius-extra-small: 4px;
+--radius-small: 8px;
+--radius-medium: 12px;
+--radius-large: 16px;
+--radius-large-end: 0 16px 16px 0;
+--radius-extra-large: 28px;
+--radius-circle: 50%;
+--radius-full: 500px;
+
+--elevation-1: 0 1px 2px hsla(0, 0%, 0%, 0.3), 0 1px 3px 1px hsla(0, 0%, 0%, 0.15);
+--elevation-2: 0 1px 2px hsla(0, 0%, 0%, 0.3), 0 2px 6px 2px hsla(0, 0%, 0%, 0.15);
+
+--top-app-bar-height: 64px;
+
+@media(prefers-reduced-motion: no-preference){
+--motion-duration-short-1: 100ms;
+--motion-duration-short-2: 200ms;
+--motion-duration-medium-1: 250ms;
+--motion-duration-medium-2: 400ms;
+--motion-duration-long: 500ms;
+
+
+--motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+--motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+--motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+--motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+--motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+--motion-easing-legacy: cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
+[data-theme="light"]{
+
+color-scheme: light;  
+--background: var(--light-background);
+--on-background: var(--light-on-background);
+--surface: var(--light-surface);
+--on-surface: var(--light-on-surface);
+--surface-variant: var(--light-surface-variant);
+--on-surface-variant: var(--light-on-surface-variant);
+--surface-container-high: var(--light-surface-container-high); 
+--surface-container-highest: var(--light-surface-container-highest);
+--surface-container: var(--light-surface-container);
+--outline: var(--light-outline);
+--outline-variant: var(--light-outline-variant);
+--primary: var(--light-primary);
+--on-primary: var(--light-on-primary);
+--primary-container: var(--light-primary-container);
+--on-primary-container: var(--light-on-primary-container);
+--secondary: var(--light-secondary);
+--on-secondary: var(--light-on-secondary);
+--secondary-container: var(--light-secondary-container);
+--on-secondary-container: var(--light-on-secondary-container);
+--tertiary: var(--light-tertiary);
+--on-tertiary: var(--light-on-tertiary);
+--tertiary-container: var(--light-on-tertiary);
+--on-tertiary-container: var(--light-on-tertiary-container);
+--error: var(--light-error);
+--on-error: var(--light-on-error);
+--error-container: var(--light-error-container);
+--on-error-container: var(--light-on-error-container);
+--inverse-surface: var(--light-inverse-surface);
+--inverse-on-surface: var(--light-inverse-on-surface);
+--inverse-primary: var(--light-inverse-primary);
+}
+
+[data-theme="dark"]{
+
+  color-scheme: dark;  
+--background: var(--dark-background);
+--on-background: var(--dark-on-background);
+--surface: var(--dark-surface);
+--on-surface: var(--dark-on-surface);
+--surface-variant: var(--dark-surface-variant);
+--on-surface-variant: var(--dark-on-surface-variant);
+--surface-container-high: var(--dark-surface-container-high) ;
+--surface-container-highest: var(--dark-surface-container-highest);
+--surface-container: var(--dark-surface-container);
+--outline: var(--dark-outline);
+--outline-variant: var(--dark-outline-variant);
+--primary: var(--dark-primary);
+--on-primary: var(--dark-on-primary);
+--primary-container: var(--dark-primary-container);
+--on-primary-container: var(--dark-on-primary-container);
+--secondary: var(--dark-secondary);
+--on-secondary: var(--dark-on-secondary);
+--secondary-container: var(--dark-secondary-container);
+--on-secondary-container: var(--dark-on-secondary-container);
+--tertiary: var(--dark-tertiary);
+--on-tertiary: var(--dark-on-tertiary);
+--tertiary-container: var(--dark-on-tertiary);
+--on-tertiary-container: var(--dark-on-tertiary-container);
+--error: var(--dark-error);
+--on-error: var(--dark-on-error);
+--error-container: var(--dark-error-container);
+--on-error-container: var(--dark-on-error-container);
+--inverse-surface: var(--dark-inverse-surface);
+--inverse-on-surface: var(--dark-inverse-on-surface);
+--inverse-primary: var(--dark-inverse-primary);
+}
 
 
 /*-----------------------------------*\
