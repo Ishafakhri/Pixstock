@@ -7,49 +7,9 @@ This is a stock photos app made by codewithsadee
 
 #---------- HEADER ----------#
 
-aria-label = Open menu
-<span class="material-symbols-outlined" aria-hidden="true">menu</span>
-
-Pixstock
-
-aria-label = Close search
-<span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
-
-<span class="material-symbols-outlined leading-icon" aria-hidden="true">search</span>
-
-placeholder = Search...
-
-<span class="material-symbols-outlined" aria-hidden="true">close</span>
-
-aria-label = Submit search
-
-<span class="material-symbols-outlined" aria-hidden="true">search</span>
-
-<span class="material-symbols-outlined" aria-hidden="true">image</span>
-Photos
-
-<span class="material-symbols-outlined" aria-hidden="true">videocam</span>
-Videos
-
-<span class="material-symbols-outlined leading-icon" aria-hidden="true">history</span>
-
-Nature
-
-Tree
-
-Man portrait
-
-Mountain
-
-aria-label = Open search
-
-<span class="material-symbols-outlined" aria-hidden="true">search</span>
-
 aria-label = Switch theme
 
-<span class="material-symbols-outlined dark-icon" aria-hidden="true">dark_mode</span>
 
-<span class="material-symbols-outlined light-icon" aria-hidden="true">light_mode</span>
 
 
 
