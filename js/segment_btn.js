@@ -1,6 +1,23 @@
+"use strict";
+
 /**
- * @copyright codewithsadee 2023
- * @author sadee <codewithsadee@gmail.com>
+ * Import
+ */
+import { AddEventOnElements } from "./utils/event.js";
+
+/**
+ * 
  */
 
-"use strict";
+export const segment = function($segment, callback){
+    const /**{NodeElement} */ $segmentBtns = $segment.querySelectorAll("[data-segment-btn]");
+
+    let /**{NodeElement} */ $lastSelectedSegmentBtn = $segment.querySelector("[data-segment-btn].selected");
+
+    AddEventOnElements($segmentBtns, "click", function(){
+        $lastSelectedSegmentBtn.classList.remove("selected");
+        this.classList.add("selected");
+        $lastSelectedSegmentBtn = this;
+        callback(this.dataset.segmentValue);
+    });
+}

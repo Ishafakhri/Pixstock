@@ -17,7 +17,7 @@ aria-label = Switch theme
 
 aria-label = Close menu
 
-<span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+
 
 Pixstock
 

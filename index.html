@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,10 +20,11 @@
 
     <link rel="stylesheet" href="./css/style.css">
 
-    <script src="./js/theme.js" type="module"></script>
+<script src="./js/theme.js" type="module"></script>
 <script src="./js/global.js" type="module"></script>
 <script src="./js/app.js" type="module"></script>
 <script src="./js/search.js" type="module"></script>
+<script src="./js/utils/event.js" type="module"></script>
 </head>
 <body>
 
@@ -84,35 +85,7 @@
 
             <div class="divider"></div>
 
-            <div class="list" data-search-list>
-                <button class="list-item" data-ripple>
-                    <span class="material-symbols-outlined leading-icon" aria-hidden="true">history</span>
-
-                    <span class="body-large text">Nature</span>
-                    <div class="state-layer"></div>
-                </button>
-
-                <button class="list-item" data-ripple>
-                    <span class="material-symbols-outlined leading-icon" aria-hidden="true">history</span>
-
-                    <span class="body-large text">Tree</span>
-                    <div class="state-layer"></div>
-                </button>
-
-                <button class="list-item" data-ripple>
-                    <span class="material-symbols-outlined leading-icon" aria-hidden="true">history</span>
-
-                    <span class="body-large text">Man portrait</span>
-                    <div class="state-layer"></div>
-                </button>
-
-                <button class="list-item" data-ripple>
-                    <span class="material-symbols-outlined leading-icon" aria-hidden="true">history</span>
-
-                    <span class="body-large text">Mountain</span>
-                    <div class="state-layer"></div>
-                </button>
-            </div>
+            <div class="list" data-search-list></div>
         </div>
     </div>
 
@@ -131,5 +104,13 @@
 
  </header>
 
+ <!-- Navigation -->
+  <nav class="navigation" data-navigation>
+    <div class="navigation-header">
+        <button class="icon-btn" aria-label="close menu" data-ripple data-nav-toggler>
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+        </button>
+    </div>
+  </nav>
 </body>
 </html>

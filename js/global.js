@@ -29,3 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
 const /** {NodeElement} */ $rippleElems = document.querySelectorAll("[data-ripple]");
 
 $rippleElems.forEach($rippleElem => ripple($rippleElem));
+
+window.filterObj = {};  
