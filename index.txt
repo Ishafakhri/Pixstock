@@ -21,8 +21,7 @@ aria-label = Close menu
 
 Pixstock
 
-<span class="material-symbols-outlined leading-icon" aria-hidden="true">home</span>
-Home
+
 
 <span class="material-symbols-outlined leading-icon" aria-hidden="true">image</span>
 Photos
