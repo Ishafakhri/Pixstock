@@ -9,7 +9,6 @@ import {favorite} from "./favorite.js";
  */
 export const photoCard = photo =>{
     const /**{String} */ root = window.location.origin;
-    console.log(photo);
 
     const {
         alt,
@@ -23,13 +22,15 @@ export const photoCard = photo =>{
     const /**{NodeElement} */ $card = document.createElement("div");
     $card.classList.add("card", "grid-item");
     $card.style.backgroundColor = backdropColor;
+    const /**{Object} */ favoriteObject = JSON.parse(window.localStorage.getItem("favorite"));
+
 
     $card.innerHTML = `
         <figure class="card-banner" style="--width:${width}; --height:${height};">
             <img src="${large}" width="${width}" height="${height}" loading="lazy" class="img-cover" alt="${alt}">
         </figure>
         <div class="card-content">
-            <button class="icon-btn small" aria-label="Add to Favorite" data-ripple data-favorite-btn>
+            <button class="icon-btn small ${favoriteObject.photos[id] ? "active" : ""}" aria-label="Add to Favorite" data-ripple data-favorite-btn>
                 <span class="material-symbols-outlined" aria-hidden="true">favorite</span>                    <div class="state-layer"></div>
             </button>
         </div>
@@ -47,6 +48,6 @@ export const photoCard = photo =>{
     $rippleElem.forEach($rippleElem => ripple($rippleElem));
     
     const /**{NodeElement} */ $favButton = $card.querySelector("[data-favorite-btn]");
-    favorite($favButton, "photos", id)
+    favorite($favButton, "photos", id);
     return $card;
 }
