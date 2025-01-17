@@ -21,6 +21,8 @@ const fetchData = async function(url, successCallback){
         successCallback(data);
     }
 }
+
+
 let /**{String} */ requestUrl = "";
 const /**{Object} */ root = {
     default: "https://api.pexels.com/v1/",

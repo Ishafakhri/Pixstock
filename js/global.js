@@ -42,6 +42,15 @@ AddEventOnElements($navTogglers, "click", function () {
 });
 
 
-
-
 window.filterObj = {};  
+
+/**
+ * Initialize fav object to local storage
+ */
+if(!window.localStorage.getItem("favorite")){
+  const /**{Object} */ favObject = {
+    photos : {},
+    videos : {}
+  }
+  window.localStorage.setItem("favorite", JSON.stringify(favObject));   
+}
