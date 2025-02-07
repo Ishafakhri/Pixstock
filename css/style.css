@@ -482,7 +482,9 @@ button:disabled{
 .card-badge .material-symbols-outlined{
   font-size: 1.8rem;
 }
-
+.color-primary{
+  color: var(--primary);
+}
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
@@ -1050,9 +1052,29 @@ button:disabled{
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
-
-
-
+.footer{
+  margin-block-start: 24px;
+  padding-block-end: 16px;
+}
+.footer-card{
+  background-color: var(--surface-container);
+  color: var(--on-surface-variant);
+  padding: 16px;
+  border-radius: var(--radius-large);
+}
+.footer-card .text{
+  line-height: 18px;
+  margin-block: 8px 16px;
+}
+.footer-card :where(span, a){
+  display: inline-block;
+}
+.footer-card a:not(.logo):hover{
+  text-decoration: underline;
+}
+.footer-card .title{
+  margin-block-end: 4px;
+}
 
 
 /*-----------------------------------*\

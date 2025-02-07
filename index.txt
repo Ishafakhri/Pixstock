@@ -149,17 +149,14 @@ Twitter
 
 #---------- ALL PHOTO PAGE ----------#
 
-Curated photos - Pixstock
+
 
 Curated photos
 
-<span class="material-symbols-outlined leading-icon" aria-hidden="true">check</span>
 
 Orientation
 
-<span class="material-symbols-outlined trailing-icon" aria-hidden="true">arrow_drop_down</span>
 
-<span class="material-symbols-outlined trailing-icon" aria-hidden="true">close</span>
 
 Portrait
 Landscape
