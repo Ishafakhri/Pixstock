@@ -282,24 +282,7 @@
            <section class="section popular-video" aria-labelledby="popular-video-label">
                 <div class="container">
                     <h2 class="title-large section-title" id="popular-video-label">Popular Video</h2>
-                    <div class="media-grid" data-video-grid>
-                        <div class="card video grid-item">
-                            <div class="card-banner" style="--width: 160; --height: 118;">
-                                <video class="img-cover" preload="none" poster="" data-video loop autoplay muted>
-                                    <source src="./assets/videos/video-banner-1.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-content">
-                                <button class="icon-btn small" aria-label="Add to favorite" data-ripple>
-                                    <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
-                                    <div class="state-layer"></div>
-                                </button>
-                            </div>
-                            <span class="card-badge">
-                                <span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
-                            </span>
-                        </div>
-                    </div>
+                    <div class="media-grid" data-video-grid></div>
                     <div class="overlay-btn">
                         <a href="./pages/videos/videos.html" class="btn btn-primary" data-ripple>
                             <span class="label-large text">Explore More</span>
@@ -308,8 +291,43 @@
                     </div>
                 </div>
            </section>
+
+           <!-- Collection -->
+            <section class="section collection">
+                <div class="container">
+                    <h2 class="title-large section-title">Featured Collection</h2>
+                    <div class="collection-grid" data-collection-grid></div>
+
+                    <a href="./pages/collections/collection.html" class="btn btn-primary" data-ripple>
+                        <span class="label-large text">More Collections</span>
+                        <div class="state-layer"></div>
+                    </a>
+                </div>
+            </section>
     </article>
    </main>
+
+   <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-card">
+                <div class="col">
+                    <a href="" class="logo">Pixstock</a>
+                    <p class="text body-small">Pixstock is a stock photo app developed by <span class="color-primary">Ishafakhri</span>.
+                        All photos and videos provided by <a href="https://pexels.com" target="_blank" class="color-primary">Pexels</a>.
+                    </p>
+                </div>
+                <div class="col">
+                    <p class="title label-medium">Follow me on</p>
+                    <div class="social-list">
+                        <a href="https://www.instagram.com/ishafakhriakbr?igsh=eDV1cTA0bHY4czRu" class="label-small color-primary">Instagram</a>
+                        <a href="https://www.linkedin.com/in/muhammad-ishafakhri-akbar-160b81238/" class="label-small color-primary">Linkedin</a>
+                        <a href="https://www.github.com/Ishafakhri" class="label-small color-primary">Github</a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 <script src="./js/global.js" type="module"></script>
 <script src="./js/app.js" type="module"></script>
