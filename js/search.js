@@ -23,7 +23,9 @@ AddEventOnElements($searchTogglers, "click", () => $searchView.classList.toggle(
 const /**{NodeElement} */ $searchField = document.querySelector("[data-search-field]");
 const /**{NodeElement} */ $searchClearBtn = document.querySelector("[data-search-clear-btn]");
 
-$searchClearBtn.addEventListener("click", () => $searchField.value = "");
+if ($searchClearBtn) {
+    $searchClearBtn.addEventListener("click", () => $searchField.value = "");
+}
 
 /**
  * Search type
@@ -43,22 +45,23 @@ if (!window.filterObj) {
 }
 const /** {NodeElement} */ $searchBtn = document.querySelector("[data-search-btn]");
 
-$searchBtn.addEventListener("click", function () {
-  const /** {Boolean} */ searchValue = $searchField.value.trim();
-  console.log(searchValue);
-  if (searchValue) {
-    updateSearchHistory(searchValue);
-    window.filterObj.query = searchValue;
-    updateUrl(window.filterObj, window.searchType);
-  }
-});
+if ($searchBtn) {
+    $searchBtn.addEventListener("click", function () {
+        const /** {Boolean} */ searchValue = $searchField.value.trim();
+        console.log(searchValue);
+        if (searchValue) {
+            updateSearchHistory(searchValue);
+            window.filterObj.query = searchValue;
+            updateUrl(window.filterObj, window.searchType);
+        }
+    });
+}
 
 $searchField.addEventListener("keydown", e => {
-  if (e.key === "Enter" && $searchField.value.trim()) {
-    $searchBtn.click();
-  }
+    if (e.key === "Enter" && $searchField.value.trim()) {
+        $searchBtn.click();
+    }
 });
-
 
 /**
  * Update search history
@@ -91,27 +94,25 @@ const /** {NodeElement} */ $searchList = document.querySelector("[data-search-li
 const /** {Number} */ historyLen = searchHistory.items.length;
 
 for (let i = 0; i < historyLen & i <= 5; i++) {
-  const /** {NodeElement} */ $listItem = document.createElement("button");
-  $listItem.classList.add("list-item");
+    const /** {NodeElement} */ $listItem = document.createElement("button");
+    $listItem.classList.add("list-item");
 
-  $listItem.innerHTML = `
-    <span class="material-symbols-outlined leading-icon" aria-hidden="true">history</span>
+    $listItem.innerHTML = `
+        <span class="material-symbols-outlined leading-icon" aria-hidden="true">history</span>
 
-    <span class="body-large text">${searchHistory.items[i]}</span>
+        <span class="body-large text">${searchHistory.items[i]}</span>
 
-    <div class="state-layer"></div>
-  `;
+        <div class="state-layer"></div>
+    `;
 
-  ripple($listItem);
+    ripple($listItem);
 
-  $listItem.addEventListener("click", function () {
-    $searchField.value = this.children[1].textContent;
-    $searchBtn.click();
-  });
+    $listItem.addEventListener("click", function () {
+        $searchField.value = this.children[1].textContent;
+        $searchBtn.click();
+    });
 
-  $searchList.appendChild($listItem);
-
+    $searchList.appendChild($listItem);
 }
 
 const /** {Object} */ search = urlDecode(window.location.search.slice(1));
-if(search.query) $searchField.value = search.query;
