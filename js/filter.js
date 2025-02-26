@@ -17,5 +17,21 @@ export const filter = ($filterWrapper, filterObj, callback) => {
     menu($filterWrapper, filterValue =>{
         $filterValue.innerText = filterValue;
         $filterChip.classList.add("selected");
+
+        newObj[filterKey] = filterValue;
+        callback(newObj);
     });
+    $filterClearBtn.addEventListener("click", () => {
+        $filterChip.classList.remove("selected");
+        $filterValue.innerText = $filterValue.dataset.filterValue;
+        delete newObj[filterKey];
+        callback(newObj);
+    });
+    $filterColorField?.addEventListener("change", function (){
+        const /**{String} */ filterValue = this.value.toLowerCase();
+        $filterValue.innerText = filterValue;
+        $filterChip.classList.add("selected");
+        newObj[filterKey] = filterValue;
+        callback(newObj);
+    }) 
 }

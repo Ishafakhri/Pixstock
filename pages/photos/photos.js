@@ -18,6 +18,8 @@ $filterBar.computedStyleMap.display = window.location.search ? "flex" : "none";
 const /**{NodeList} */ $filterWrappers = document.querySelectorAll("[data-filter]");
 $filterWrappers.forEach($filterWrapper => {
     filter($filterWrapper, window.filterObj, (newObj)=>{
+        window.filterObj = newObj;
+        updateUrl(newObj, "photos");
         
     });
 })

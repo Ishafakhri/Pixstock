@@ -4,6 +4,7 @@
  */
 import { ripple } from "./utils/ripple.js";
 import { AddEventOnElements } from "./utils/event.js";
+import { urlDecode } from "./utils/urlDecode.js";
 
 
 
@@ -45,6 +46,26 @@ AddEventOnElements($navTogglers, "click", function () {
 window.filterObj = {};  
 
 /**
+ * Show filter option
+ */
+if(window.location.search.slice(1)){
+  const /** {NodeElement} */ search = urlDecode(window.location.search.slice(1));
+  Object.entries(search).forEach(item =>{
+    const /**{String} */ filterKey = item[0];
+    const /**{String} */ filterValue = item[1];
+    window.filterObj[filterKey] = filterValue;
+
+    if(filterKey === "query"){
+      const /**NodeElement */ $filterItem = document.querySelector(`[data-filter="${filterKey}"]`);
+      $filterItem?.querySelector("[data-filter-chip]").classList.add("selected") 
+      if($filterItem) $filterItem.querySelector("[data-filter-value]").innerText = filterValue;
+    }
+  })
+}
+
+
+
+/**
  * Initialize fav object to local storage
  */
 if(!window.localStorage.getItem("favorite")){
@@ -54,3 +75,13 @@ if(!window.localStorage.getItem("favorite")){
   }
   window.localStorage.setItem("favorite", JSON.stringify(favObject));   
 }
+
+/**
+ * Page Transition
+ */
+window.addEventListener("loadstart", function(){
+  document.body.style.opacity = "0";
+})
+window.addEventListener("DOMContentLoaded", function(){
+  document.body.style.opacity = "1";
+})
