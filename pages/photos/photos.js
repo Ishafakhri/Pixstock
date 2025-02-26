@@ -4,10 +4,28 @@ import {gridInit, updateGrid} from "../../js/utils/masonry_grid.js";
 import {photoCard} from "../../js/photo_card.js";
 import {updateUrl} from "../../js/utils/updateUrl.js";
 import {urlDecode} from "../../js/utils/urlDecode.js";
+import {filter} from "../../js/filter.js";
 
+/**
+ * showing filter bar
+ */
 const /**{NodeElement} */ $filterBar = document.querySelector("[data-filter-bar]");
 $filterBar.computedStyleMap.display = window.location.search ? "flex" : "none"; 
 
+/**
+ * initialiting filter bar
+ */
+const /**{NodeList} */ $filterWrappers = document.querySelectorAll("[data-filter]");
+$filterWrappers.forEach($filterWrapper => {
+    filter($filterWrapper, window.filterObj, (newObj)=>{
+        
+    });
+})
+
+/**
+ * Rendering Photos
+ * Curated or Searched Photos
+ */
 const /**{NodeElement} */ $photoGrid = document.querySelector("[data-photo-grid]");
 const /**{NodeElement} */ $title = document.querySelector("[data-title]");
 const /**{NodeElement} */ photoGrid = gridInit($photoGrid);
@@ -39,6 +57,9 @@ const renderPhotos = function (currentPage){
 }
 renderPhotos(currentPage);
 
+/**
+ * load functionallity
+ */
 const /**{NodeElement} */ $loader = document.querySelector("[data-loader]");
 let /**{Boolean} */ isLoaded = true;
 window.addEventListener("scroll", function(){
